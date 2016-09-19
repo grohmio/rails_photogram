@@ -1,0 +1,9 @@
+rails_photogram_image:
+  build: .
+  command: bundle exec rails s -p 3000 -b '0.0.0.0'
+  dockerfile: dockerfile-rails-photogram
+  container_name : rails_photogram_image
+  ports:
+    - "3000:3000"
+  volumes:
+    - .:/usr/src/app
