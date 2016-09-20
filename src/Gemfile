@@ -18,9 +18,14 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem 'kaminari', '~> 0.16.3'
 gem 'jquery-turbolinks'
 
+# development exclusive gems
+group :development do
+  gem 'web-console', '~> 2.0'
+end
+
+# test and development gems
 group :development, :test do
   gem 'byebug'
-  gem 'web-console', '~> 2.0'
   gem 'spring'
 
   gem 'capybara', '~> 2.4.4'
