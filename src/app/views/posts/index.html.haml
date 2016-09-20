@@ -1,10 +1,5 @@
-.posts-wrapper.row
-  -@posts.each do |post|
-    .post
-      .post-head
-        .name
-          Max Mustermann (place holder)
-      .image.center-block
-        =link_to (image_tag post.image.url(:medium), class:'img-responsive'), post_path(post)
-      %p.caption
-        =post.caption
+#posts
+  = render 'posts'
+
+#paginator.text-center
+  = link_to_next_page @posts, 'LOAD MORE', remote: true, id: 'load_more'

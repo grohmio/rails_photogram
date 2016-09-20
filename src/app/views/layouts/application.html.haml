@@ -1,28 +1,16 @@
-= stylesheet_link_tag "application"
 %html
   %head
-    %title= yield(:title)
-    = javascript_include_tag "application"
+    %title JenaDevs Pictures
+    %meta{:charset => "utf-8"}
+    %meta{"http-equiv" => "X-UA-Compatible", :content => "IE=edge"}
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-    = yield(:head)
-  %body
-    %nav.navbar.navbar-default
-    .navbar-container
-      .navbar-header
-        %button.navbar-toggle.collapsed{"data-target" => "#bs-navbar-collapse-1", "data-toggle" => "collapse", type: "button"}
-          %span.sr-only Toggle Navigation
-          %span.icon-bar
-          %span.icon-bar
-        .navbar-brand= link_to "Photogram", root_path
-      .collapse.navbar-collapse#bs-navbar-collapse-1
-        %ul.nav.navbar-nav.navbar-right
-          %li
-            = link_to "New Post", new_post_path
-          %li
-            = link_to "Login", '#'
-          %li
-            = link_to "Register", '#'
+
+%body
+  = render 'layouts/navbar'
+  -flash.each do |name, msg|
     .container
-    -flash.each do |name, msg|
-      = content_tag :div, msg, class: [:alert, alert_for(name)]
-    = yield
+    = content_tag :div, msg, class: [:alert, alert_for(name)]
+  = yield
