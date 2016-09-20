@@ -4,6 +4,6 @@ rails_photogram_image:
   dockerfile: dockerfile-rails-photogram
   container_name : rails_photogram_image
   ports:
-    - "3000:3000"
+    - "80:3000"
   volumes:
     - .:/usr/src/app
