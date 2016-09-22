@@ -3,7 +3,7 @@ Given(/^there's a form named "(.*?)"$/) do |formname|
 end
 
 When(/^I am on the loginpage$/) do
-  visit root_path + "/users/sign_in"
+  visit('/users/sign_in')
 end
 
 Then (/^I should not see the "(.*?)" message$/) do |message|
