@@ -10,9 +10,9 @@ Then (/^I should not see the "(.*?)" message$/) do |message|
   page.should have_no_content(message)
 end
 
-Then(/^I should see the "(.*?)" form$/) do |title|
-  page.should have_content(title)
-end
+#Then(/^I should see the "(.*?)" form$/) do |title|
+#  page.should have_content(title)
+#end
 
 When(/^I press "(.*?)"$/) do |button|
   click_button(button)
