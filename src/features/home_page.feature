@@ -1,7 +1,8 @@
 Feature: Home page
 
   Scenario: Viewing application's home page
-    Given there's a post titled "My first" with "Hello, BDD world!" content
     When I am on the homepage
-    Then I should see the "My first" post
+    Then I should redirected to "/users/sign_in"
+	Then I should see the "You need to sign in or sign up before continuing." message
+
 

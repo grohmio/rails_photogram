@@ -1,15 +1,16 @@
-Given(/^there's a post titled "(.*?)" with "(.*?)" content$/) do |title, content|
-  @post = FactoryGirl.create(:post, title: title, content: content)
-end
-
 When(/^I am on the homepage$/) do
   visit root_path
 end
 
-Then(/^I should see the "(.*?)" post$/) do |title|
-  @post = Post.find_by_title(title)
+Then(/^I should redirected to "(.*?)"$/) do |redirect_path|
+  page.current_path.should == redirect_path
+end
 
-  page.should have_content(@post.title)
-  page.should have_content(@post.content)
+Then (/^I should see the "(.*?)" message$/) do |message|
+  page.should have_content(message)
+end
+
+Then(/^I should see the "(.*?)" form$/) do |title|
+  page.should have_content(title)
 end
 
