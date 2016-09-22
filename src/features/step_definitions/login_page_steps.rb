@@ -7,7 +7,7 @@ When(/^I am on the loginpage$/) do
 end
 
 Then (/^I should not see the "(.*?)" message$/) do |message|
-  page.should have_no_content(message)
+  page.should_not have_content(message)
 end
 
 #Then(/^I should see the "(.*?)" form$/) do |title|
